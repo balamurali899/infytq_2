@@ -1,5 +1,3 @@
-#PF-Assgn-20
-
 def calculate_loan(account_number,salary,account_balance,loan_type,loan_amount_expected,customer_emi_expected):
     eligible_loan_amount=0
     bank_emi_expected=0
@@ -12,7 +10,7 @@ def calculate_loan(account_number,salary,account_balance,loan_type,loan_amount_e
        count=count+1
     if(count==4 and rem==1):
         if(account_balance>=100000):
-            if(salary>25000 and salary<=50000):
+            if(loan_type=="Car" and salary>25000 and salary<50000):
                 eligible_loan_amount=500000
                 bank_emi_expected=36
                 if(loan_amount_expected<=eligible_loan_amount and customer_emi_expected<=bank_emi_expected):
@@ -26,7 +24,7 @@ def calculate_loan(account_number,salary,account_balance,loan_type,loan_amount_e
                     print("The customer is not eligible for the loan")
                 
                 
-            elif(salary>50000 and salary<=75000):
+            elif(loan_type=="House" and salary>50000 and salary<75000):
                 eligible_loan_amount=6000000
                 bank_emi_expected=60
                 if(loan_amount_expected<=eligible_loan_amount and customer_emi_expected<=bank_emi_expected):
@@ -38,7 +36,7 @@ def calculate_loan(account_number,salary,account_balance,loan_type,loan_amount_e
                 else:
                     print("The customer is not eligible for the loan")    
                 
-            elif(salary>75000):
+            elif(loan_type=="Business" and salary>75000):
                 eligible_loan_amount=7500000
                 bank_emi_expected=84
                 if(loan_amount_expected<=eligible_loan_amount and customer_emi_expected<=bank_emi_expected):
